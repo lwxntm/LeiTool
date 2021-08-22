@@ -1,14 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ucv="clr-namespace:LeiTool.UserContentViews"
+             xmlns:pages="clr-namespace:LeiTool.Pages"
              Title="网络工具"
              BackgroundColor="#FFF8E6"
              x:Class="LeiTool.Pages.NetWorkToolContentPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="这里是网络工具页面"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ucv:ItemIconContentView Grid.Column="0"
+                                     Title="网络信息"
+                                     IconString="&#xe67c;">
+                <ucv:ItemIconContentView.GoToPage>
+                    <pages:GetNetWorkInfoPage />
+                </ucv:ItemIconContentView.GoToPage>
+            </ucv:ItemIconContentView>
+           
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
