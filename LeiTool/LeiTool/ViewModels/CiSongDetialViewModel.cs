@@ -6,7 +6,7 @@ using System.Text;
 using Xamarin.Forms;
 namespace LeiTool.ViewModels
 {
-    [QueryProperty(nameof(SearchCondition), "searchCondition")]
+    [QueryProperty(nameof(SearchCondition), "SearchCondition")]
     public class CiSongDetialViewModel : BindableBase
     {
         //检索条件，格式是该词的第一句正文
@@ -61,6 +61,7 @@ namespace LeiTool.ViewModels
 
         private async void OnCiSongLoad()
         {
+            Content = "正在检索";
 
             Debug.WriteLine("正在检索");
             CiSongEntity = await new Producer().GetCiSongByP1(searchCondition);

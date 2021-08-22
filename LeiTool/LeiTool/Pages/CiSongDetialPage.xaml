@@ -2,18 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:LeiTool.ViewModels"
+             Title="{Binding Rhythmic}"
+             BackgroundColor="#FFF8E6"
              x:Class="LeiTool.Pages.CiSongDetialPage">
     <ContentPage.BindingContext>
         <vm:CiSongDetialViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <Label Text="{Binding Rhythmic}"
-                HorizontalOptions="Center" /> 
-            <Label Text="{Binding Author}"
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center"
+                         Margin="0,0,0,25">
+                <Label Text="词人："
+                       FontSize="26"
+                       HorizontalOptions="Center"></Label>
+                 <Label Text="{Binding Author}"
+                   FontSize="26"
                 HorizontalOptions="Center" />
+            </StackLayout>
+           
             <Label  Text="{Binding Content}"
-                    HorizontalOptions="Center" 
+                    HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                    FontSize="18"
                     />
         </StackLayout>
     </ContentPage.Content>

@@ -30,10 +30,9 @@ namespace CiSongProducer
         public async Task<List<CiSong>> GetRandomsCiSongs()
         {
             var list1 = new List<CiSong>();
-            var 开始索引 = new Random().Next(0, _ciList.Count - 20);
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 5; i++)
             {
-                list1.Add(_ciList[开始索引 + i]);
+                list1.Add(_ciList[new Random().Next(0, _ciList.Count - 20) + i]);
             }
             return await Task.FromResult(list1);
         }

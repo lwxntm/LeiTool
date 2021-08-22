@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LeiTool.ViewModels"
+             xmlns:conv="clr-namespace:LeiTool.IVauleConverters"
+             xmlns:model="clr-namespace:TodoListRepository.Models;assembly=TodoListRepository"
+             x:Class="LeiTool.Pages.TodoListPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:TodoListIsFinishedToStrConverter  x:Key="BoolToStr"/>
+            <conv:TodoListIsFinishedToColorConverter x:Key="BoolToColor"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <vm:TodoListViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <CollectionView  ItemsSource="{Binding TodoListData}" SelectedItem="{Binding SelectedItem}" SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="1"
+                                     Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10"
+                                     x:DataType="model:TodoListItem" Orientation="Horizontal">
+                            <Label Text="{Binding Content}"
+                                   LineBreakMode="NoWrap"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
+                            <Label
+                                Text="{Binding IsFinished, Converter={StaticResource BoolToStr}}"
+                                HorizontalOptions="End" 
+                                VerticalOptions="Center"
+                                TextColor="{Binding IsFinished,Converter={StaticResource BoolToColor}}"
+                                FontSize="16"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Entry Grid.Row="2"
+                   Placeholder="请在这里输入内容"
+                   Text="{Binding EntryStr}" />
+            <StackLayout Grid.Row="1"
+                         Orientation="Horizontal">
+                <Button Text="添加"
+                        Command="{Binding AddCommand}" />
+                <Button Text="删除" Command="{Binding DelCommand}" />
+                <Button Text="完成" Command="{Binding FinishSomeOneCommand}" />
+            </StackLayout>
+        </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>

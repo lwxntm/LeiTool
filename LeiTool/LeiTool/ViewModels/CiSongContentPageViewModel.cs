@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
-using CiSongProducer.Models;
+﻿using CiSongProducer.Models;
 using LeiTool.Pages;
 using Prism.Commands;
 using Prism.Mvvm;
+using System;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace LeiTool.ViewModels
 {
-    class CiSongContentPageViewModel:BindableBase
+    class CiSongContentPageViewModel : BindableBase
     {
         private ObservableCollection<CiSong> _ciSongs;
 
@@ -22,7 +20,7 @@ namespace LeiTool.ViewModels
             set { _ciSongs = value; }
         }
 
-        public DelegateCommand<CiSong> CiSongTapped {  get; set; }
+        public DelegateCommand<CiSong> CiSongTapped { get; set; }
 
         bool isBusy = false;
         public bool IsBusy

@@ -26,17 +26,10 @@
                 </ucv:ItemIconContentView.GoToPage>
             </ucv:ItemIconContentView>
             <ucv:ItemIconContentView Grid.Column="1"
-                                     Title="宋词阅读"
-                                     IconString="&#xe648;">
+                                     Title="待办事项"
+                                     IconString="&#xe67b;">
                 <ucv:ItemIconContentView.GoToPage>
-                    <pages:CiSongContentPage />
-                </ucv:ItemIconContentView.GoToPage>
-            </ucv:ItemIconContentView>
-            <ucv:ItemIconContentView  Grid.Column="2"
-                                      Title="元曲阅读"
-                                      IconString="&#xe60a;">
-                <ucv:ItemIconContentView.GoToPage>
-                    <pages:CiSongContentPage />
+                    <pages:TodoListPage />
                 </ucv:ItemIconContentView.GoToPage>
             </ucv:ItemIconContentView>
         </Grid>
