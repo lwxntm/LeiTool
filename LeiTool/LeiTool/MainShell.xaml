@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     xmlns:ucv="clr-namespace:LeiTool.UserContentViews"
+       xmlns:pages="clr-namespace:LeiTool.Pages"
+             x:Class="LeiTool.MainShell">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#1976D2" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#1976D2" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <!--下面这一行把TabBar的style绑定到上面-->
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <Tab Title="工具" Icon="tool.png" >
+        <ShellContent>
+            <pages:LocalToolContentPage>
+                <ContentPage.ToolbarItems>
+                    <ToolbarItem Text="Add" />
+                </ContentPage.ToolbarItems>
+            </pages:LocalToolContentPage>
+        </ShellContent>
+      
+    </Tab>
+    <Tab Title="网络" Icon="network.png">
+        <ShellContent>
+            <pages:NetWorkToolContentPage>
+                
+            </pages:NetWorkToolContentPage>
+        </ShellContent>
+    </Tab>
+    <Tab Title="信息" Icon="info.png">
+        <ShellContent>
+            <ContentPage>
+                <Label Text="信息"/>
+            </ContentPage>
+        </ShellContent>
+    </Tab>
+</Shell>

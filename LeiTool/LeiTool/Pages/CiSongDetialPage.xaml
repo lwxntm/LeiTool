@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LeiTool.ViewModels"
+             x:Class="LeiTool.Pages.CiSongDetialPage">
+    <ContentPage.BindingContext>
+        <vm:CiSongDetialViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{Binding Rhythmic}"
+                HorizontalOptions="Center" /> 
+            <Label Text="{Binding Author}"
+                HorizontalOptions="Center" />
+            <Label  Text="{Binding Content}"
+                    HorizontalOptions="Center" 
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

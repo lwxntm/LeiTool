@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="this"
+             x:Class="LeiTool.UserContentViews.ItemIconContentView">
+    <ContentView.Content>
+        <StackLayout Orientation="Vertical"
+                     WidthRequest="316"
+                     HeightRequest="215"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </StackLayout.GestureRecognizers>
+       
+            <Label Text="{Binding IconString, Source={x:Reference this}}"
+                   FontFamily="iconfont.ttf#"
+                   FontSize="40"
+                   Margin="0,23,0,0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Label Text="{Binding Title, Source={x:Reference this}}"
+                   FontSize="12"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

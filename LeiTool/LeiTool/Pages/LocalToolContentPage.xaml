@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ucv="clr-namespace:LeiTool.UserContentViews"
+             xmlns:pages="clr-namespace:LeiTool.Pages"
+             Title="本地工具"
+             BackgroundColor="#FFF8E6"
+             x:Class="LeiTool.Pages.LocalToolContentPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ucv:ItemIconContentView Grid.Column="0"
+                                     Title="宋词阅读"
+                                     IconString="&#xe60a;">
+                <ucv:ItemIconContentView.GoToPage>
+                    <pages:CiSongContentPage />
+                </ucv:ItemIconContentView.GoToPage>
+            </ucv:ItemIconContentView>
+            <ucv:ItemIconContentView Grid.Column="1"
+                                     Title="宋词阅读"
+                                     IconString="&#xe648;">
+                <ucv:ItemIconContentView.GoToPage>
+                    <pages:CiSongContentPage />
+                </ucv:ItemIconContentView.GoToPage>
+            </ucv:ItemIconContentView>
+            <ucv:ItemIconContentView  Grid.Column="2"
+                                      Title="元曲阅读"
+                                      IconString="&#xe60a;">
+                <ucv:ItemIconContentView.GoToPage>
+                    <pages:CiSongContentPage />
+                </ucv:ItemIconContentView.GoToPage>
+            </ucv:ItemIconContentView>
+        </Grid>
+      
+    </ContentPage.Content>
+</ContentPage>
